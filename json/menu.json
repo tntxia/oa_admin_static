@@ -1,0 +1,125 @@
+[{
+    "text": "基础信息管理",
+    "buttons": [{
+        "text": "公司管理",
+        "url": "#company"
+    }, {
+        "text": "菜单管理",
+        "url": "#menu"
+    }, {
+        "text": "左边菜单管理",
+        "url": "#leftbar"
+    }, {
+        "text": "权限组菜单管理",
+        "url": "restrain_menu.html"
+    }, {
+        "text": "组织架构管理",
+        "url": "#organization"
+    }, {
+        "text": "用户管理",
+        "url": "#user"
+    }, {
+        "text": "汇率管理",
+        "url": "#currency"
+    }, {
+        "text": "品牌管理",
+        "url": "base/trademark.ftl"
+    }, {
+        "text": "付款方式管理",
+        "url": "#payway"
+    }]
+}, {
+    "text": "权限管理",
+    "buttons": [{
+        "text": "权限管理",
+        "url": "#right"
+    }, {
+        "text": "权限组管理",
+        "url": "#right_group"
+    }, {
+        "text": "角色管理",
+        "url": "#restrain"
+    }]
+}, {
+    "text": "合同模板管理",
+    "buttons": [{
+        "text": "合同模板管理",
+        "url": "#contact_template"
+    }]
+}, {
+    "text": "采购管理",
+    "buttons": [{
+        "text": "订单管理",
+        "url": "#purchasing_order"
+    }, {
+        "text": "退货订单管理",
+        "url": "#purchasing_refund_order"
+    }]
+}, {
+    "text": "销售管理",
+    "buttons": [{
+        "text": "订单管理",
+        "url": "#sale_order"
+    }, {
+        "text": "退货订单管理",
+        "url": "#sale_order_refund"
+    }]
+}, {
+    "text": "仓库管理",
+    "buttons": [{
+        "text": "出入库记录管理",
+        "url": "#warehouse_in_out_record"
+    }, {
+        "text": "仓库库存管理",
+        "url": "#warehouse"
+    }]
+}, {
+    "text": "外观设计",
+    "buttons": [{
+        "text": "Logo设计",
+        "url": "#logo"
+    }, {
+        "text": "Banner设计",
+        "url": "#banner"
+    }, {
+        "text": "印章管理",
+        "url": "#stamp"
+    }]
+}, {
+
+    "text": "流程审批",
+    "buttons": [{
+        "text": "费用审批流程",
+        "url": "#process_expense"
+    }, {
+        "text": "借款审批流程",
+        "url": "#process_prepaid"
+    }, {
+        "text": "付款审批流程",
+        "url": "#process_payment"
+    }, {
+        "text": "采购审批流程",
+        "url": "#flow_purchasing"
+    }]
+}, {
+    "text": "财务信息",
+    "buttons": [{
+        "text": "往来账目管理",
+        "url": "#finance_exchange"
+    }, {
+        "text": "费用科目",
+        "url": "finance/expense_account.ftl"
+    }, {
+        "text": "付款信息管理",
+        "url": "#finance_payment"
+    }, {
+        "text": "欠款信息管理",
+        "url": "#finance_gathering"
+    }]
+}, {
+    "text": "公告管理",
+    "buttons": [{
+        "text": "公告管理",
+        "url": "#notice"
+    }]
+}]

@@ -1,0 +1,22 @@
+{
+    "cssList": ["/oa_static/css/top.css", "/static/lib/font-awesome/css/font-awesome.css",
+        "/static/lib/bootstrap/css/bootstrap.css",
+        "/static/lib/bootstrap-plus/css/bootstrap.nav.css",
+        "css/tntxiaui/style.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.datepicker.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.pagination.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.datagrid.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.ip-input.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.dialog.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.tabs.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui.combobox.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui-table-form.css",
+        "/static/lib/main-layout-install/css/main-layout.css",
+        "css/tntxiaui/style.css",
+        "css/style.css",
+        "/static/lib/ztree/css/zTreeStyle/zTreeStyle.css",
+        "/static/lib/easy-tree/css/easy-tree.css"
+    ],
+    "jsList": ["/static/lib/module_route/module_route.js", "/static/lib/main-layout-install/js/main-layout-install.js"]
+}

@@ -1,0 +1,31 @@
+<div id="app">
+    <div id="toolbar">
+        部门：
+        <select v-model="form.deptId">
+			<option value="">请选择</option>
+			<option v-for="(d,index) in deptList" :value="d.id">{{d.departname}}</option>
+		</select> 用户名：
+        <input v-model="form.name">
+        <button class="btn btn-primary" @click="query">查询</button>
+        <button class="btn btn-primary" @click="add">增加</button>
+    </div>
+
+    <div id="datagrid">
+        <jxiaui-datagrid ref="datagrid" :dataset="dataset">
+            <jxiaui-datagrid-item label="#" type="index"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="名称" field="name"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="英文名" field="name_en"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="所属部门" field="yjxs"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="职位" field="workj"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="操作">
+                <template v-slot="row">
+                    <button @click="toEdit(row)">修改</button>
+                    <button @click="toChangePassword(row)">修改密码</button>
+                    <button @click="viewRole(row)">用户角色</button>
+                    <button @click="del(row)">删除</button>
+                </template>
+            </jxiaui-datagrid-item>
+        </jxiaui-datagrid>
+
+    </div>
+</div>

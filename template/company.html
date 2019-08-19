@@ -1,0 +1,19 @@
+<div id="app">
+    <button @click="toAdd">增加</button>
+    <div>
+        <jxiaui-datagrid ref="datagrid" :dataset="dataset">
+            <jxiaui-datagrid-item label="#" type="index"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="公司名称" field="companyname">
+                <template v-slot="row">
+                    <a href="javascript:void(0)" @click="toEdit(row)">{{row.companyname}}</a>
+                </template>
+            </jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="公司电话" field="companytel"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="公司图片" field="pic_id">
+                <template v-slot="row">
+                    <img width="20" height="20" :src="'/file_center/file!showPic.do?uuid=' + row.pic_id">
+                </template>
+            </jxiaui-datagrid-item>
+        </jxiaui-datagrid>
+    </div>
+</div>
