@@ -1,0 +1,13 @@
+{
+    "modules": [{
+        "name": "position",
+        "active": true
+    }, {
+        "name": "position_add",
+        "active": true
+    }, {
+        "name": "position_edit",
+        "active": true
+    }],
+    "components": []
+}

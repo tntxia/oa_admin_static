@@ -1,0 +1,11 @@
+.organization-container {
+    display: flex;
+}
+
+.organization-left {
+    width: 150px;
+}
+
+.organization-main {
+    flex-grow: 1;
+}

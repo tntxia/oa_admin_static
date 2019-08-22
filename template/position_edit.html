@@ -1,0 +1,18 @@
+<div id="app">
+    <div style="font-size: 14px;font-weight:bold;margin-bottom: 10px;"> 职位编辑</div>
+    <jxiaui-table-form :data="form" style="margin-bottom: 10px;">
+        <jxiaui-table-form-item label="名称">
+            <template v-slot="form">
+                <input v-model="form.role_name">
+            </template>
+        </jxiaui-table-form-item>
+        <jxiaui-table-form-item label="职位描述">
+            <template v-slot="form">
+                <textarea v-model="form.remark">
+                    
+                </textarea>
+            </template>
+        </jxiaui-table-form-item>
+    </jxiaui-table-form>
+    <button @click="sub">提交</button>
+</div>
