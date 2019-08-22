@@ -10,44 +10,6 @@
     exports.init = function() {
 
         let grid;
-
-        // new Vue({
-        //     el: "#toolbar",
-        //     data: {
-        // dataset: {
-        //     url: 'user!list.do',
-        //     method: 'post'
-        // },
-        //         deptId: '',
-        //         name: null,
-        //         deptList: []
-        //     },
-        //     mounted() {
-        //         let vm = this;
-        //         $.ajax({
-        //             url: 'dept!listAll.do',
-        //             success: function(data) {
-        //                 vm.deptList = data;
-        //             },
-        //             error: function() {
-        //                 alert("请求失败");
-        //             }
-        //         });
-        //     },
-        //     methods: {
-        //         query() {
-        //             let me = this;
-        //             grid.load({
-        //                 deptId: me.deptId,
-        //                 name: me.name
-        //             })
-        //         },
-        //         add() {
-        //             router.goRoute("user_add");
-        //         }
-        //     }
-        // })
-
         new Vue({
             el: '#app',
             data: {
@@ -70,42 +32,26 @@
                 }
             },
             created: function() {},
+            mounted() {
+                this.loadDepartmentList();
+            },
             methods: {
                 query() {
-                    let me = this;
-                    grid.load({
-                        deptId: me.deptId,
-                        name: me.name
-                    })
+                    let datagrid = this.$refs["datagrid"];
+                    datagrid.setParams(this.form);
+                    datagrid.query();
                 },
                 add() {
                     router.goRoute("user_add");
                 },
-                initData: function() {
-                    var vm = this;
-                    $.ajax({
-                        url: 'position!list.do',
-                        success: function(data) {
-                            vm.positionList = data.rows;
-                        },
-                        error: function() {
-                            alert("请求失败");
-                        }
-                    });
-
-                    $.ajax({
-                        url: 'restrain!list.do',
-                        success: function(data) {
-                            vm.restrainList = data.rows;
-                        },
-                        error: function() {
-                            alert("请求失败");
-                        }
-                    });
-
-                    this.fetchData();
+                loadDepartmentList() {
+                    let me = this;
+                    http.post({
+                        url: 'dept!listAll.do'
+                    }).then(res => {
+                        me.departmentList = res;
+                    })
                 },
-
                 fetchData: function() {
                     var vm = this;
                     $.ajax({
@@ -129,36 +75,6 @@
                         }
                     });
                 },
-
-                toAdd: function() {
-                    $("#addModal").modal("show");
-                },
-                add: function() {
-                    var vm = this;
-                    var newRow = vm.newRow;
-                    if ($("#addModal [name=ipbd]").prop("checked")) {
-                        newRow.ipbd = 'Y';
-                    } else {
-                        newRow.ipbd = 'N';
-                    }
-                    $.ajax({
-                        url: 'user!add.do',
-                        type: 'post',
-                        data: newRow,
-                        success: function(data) {
-                            if (data.success) {
-                                vm.fetchData();
-                                $("#addModal").modal("hide");
-                            } else {
-                                alert("操作失败");
-                            }
-                        },
-                        error: function() {
-                            alert("请求失败");
-                        }
-                    });
-                },
-
                 unlock: function(id) {
                     unlock(id);
                 },
@@ -214,7 +130,6 @@
                         }
                     });
                 },
-                del: function(id) {},
                 onChangeIPBind: function() {
                     if ($("#addModal [name=ipbd]").prop("checked")) {
                         this.newRow.ipbd = 'Y';

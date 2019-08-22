@@ -77,6 +77,9 @@
                             router.goRoute("user");
                         }
                     })
+                },
+                back() {
+                    router.goRoute("user");
                 }
             },
             computed: {

@@ -6,7 +6,7 @@
                 <div>{{form.name}}</div>
             </template>
         </jxiaui-table-form-item>
-        <jxiaui-table-form-item label="名称">
+        <jxiaui-table-form-item label="英文名">
             <template v-slot="form">
                 <input v-model="form.name_en">
             </template>
@@ -54,5 +54,5 @@
             </template>
         </jxiaui-table-form-item>
     </jxiaui-table-form>
-    <button @click="sub">提交</button>
+    <button @click="sub">提交</button> <button @click="back">返回</button>
 </div>

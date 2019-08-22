@@ -3,11 +3,11 @@
         部门：
         <select v-model="form.deptId">
 			<option value="">请选择</option>
-			<option v-for="(d,index) in deptList" :value="d.id">{{d.departname}}</option>
+			<option v-for="(d,index) in departmentList" :value="d.id">{{d.departname}}</option>
 		</select> 用户名：
         <input v-model="form.name">
-        <button class="btn btn-primary" @click="query">查询</button>
-        <button class="btn btn-primary" @click="add">增加</button>
+        <jxiaui-button @click="query">查询</jxiaui-button>
+        <jxiaui-button @click="add">增加</jxiaui-button>
     </div>
 
     <div id="datagrid">
@@ -15,7 +15,7 @@
             <jxiaui-datagrid-item label="#" type="index"></jxiaui-datagrid-item>
             <jxiaui-datagrid-item label="名称" field="name"></jxiaui-datagrid-item>
             <jxiaui-datagrid-item label="英文名" field="name_en"></jxiaui-datagrid-item>
-            <jxiaui-datagrid-item label="所属部门" field="yjxs"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="所属部门" field="department_name"></jxiaui-datagrid-item>
             <jxiaui-datagrid-item label="职位" field="workj"></jxiaui-datagrid-item>
             <jxiaui-datagrid-item label="操作">
                 <template v-slot="row">

@@ -1,3 +1,35 @@
-<div>
-	<div id="organ-tree" class="ztree"></div>
+<div class="organization-container">
+    <div class="organization-left">
+        <div id="organ-tree" class="ztree"></div>
+    </div>
+    <div class="organization-main" id="app">
+        <div v-if="id">
+            <div style="font-size: 14px;font-weight:bold;margin-bottom: 10px;"> {{form.departname}}</div>
+            <jxiaui-table-form :data="form" :items-in-row="2" style="margin-bottom: 10px;">
+                <jxiaui-table-form-item label="部门名称">
+                    <template v-slot="form">
+                        <div>{{form.departname}}</div>
+                    </template>
+                </jxiaui-table-form-item>
+                <jxiaui-table-form-item label="部门编码">
+                    <template v-slot="form">
+                            <input v-model="form.dept_code">
+                        </template>
+                </jxiaui-table-form-item>
+                <jxiaui-table-form-item label="部门领导">
+                    <template v-slot="form">
+                        <select v-model="form.leader">
+                            <option v-for="(u,index) in userList">{{u.name}}</option>
+                        </select>
+                    </template>
+                </jxiaui-table-form-item>
+                <jxiaui-table-form-item label="备注">
+                    <template v-slot="form">
+                            <textarea v-model="form.remark"></textarea>
+                    </template>
+                </jxiaui-table-form-item>
+            </jxiaui-table-form>
+            <button @click="sub">提交</button>
+        </div>
+    </div>
 </div>
