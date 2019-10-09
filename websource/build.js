@@ -2,22 +2,28 @@ var fs = require("fs");
 
 var _ = require("./lib/underscore.js");
 
+let cache = getCache();
+
 fs.readFile("package.json", "utf8", (err, content) => {
 
     let obj = JSON.parse(content);
 
     let modules = obj.modules;
     modules.forEach(m => {
-        // 当组件属性为激活才去编译，避免太慢
-        if (!m.active) {
-            return;
-        }
         let name = m.name;
         let group = m.group;
-        let file = "modules/" + (group ? group + "/" : '') + name + ".js";
-        console.log("file", file);
-        let target = "../modules/" + (group ? group + "/" : "") + (group ? group + "_" : "") + name + ".module.js";
-        buildModuleFile((group ? group + "_" : "") + name, file, target);
+        let leftbar = !!m.leftbar;
+
+        let moduleName = (group ? group + "/" : '') + name;
+        let file = "modules/" + moduleName + ".js";
+        if (isNeedBuild(file)) {
+            console.log("准备编译模块", name);
+            let stat = fs.statSync(file);
+            let mtimeMs = stat.mtimeMs;
+            setCache(file, mtimeMs);
+            let target = "../modules/" + moduleName + ".module.js";
+            buildModuleFile(moduleName, leftbar, file, target);
+        }
     })
 
     let components = obj.components;
@@ -26,10 +32,39 @@ fs.readFile("package.json", "utf8", (err, content) => {
         if (!comp.active) {
             return;
         }
+        console.log("开始编译组件", comp.group, comp.name);
         buildCompFile(comp);
     });
 
+    fs.writeFileSync(".cache", JSON.stringify(cache));
+
 });
+
+function getCache() {
+    let cacheExist = fs.existsSync(".cache");
+    if (!cacheExist) {
+        return null;
+    }
+    let cacheContent = fs.readFileSync(".cache");
+    let cache = JSON.parse(cacheContent);
+    return cache;
+}
+
+function setCache(key, value) {
+    if (!cache) {
+        cache = {};
+    }
+    cache[key] = value;
+}
+
+function isNeedBuild(file) {
+    let stat = fs.statSync(file);
+    let mtimeMs = stat.mtimeMs;
+    if (cache && cache[file] === mtimeMs) {
+        return false;
+    }
+    return true;
+}
 
 function buildCompFile(c) {
 
@@ -60,24 +95,23 @@ function buildCompFile(c) {
             console.error(err);
             return;
         }
-        console.log(distFile, "构建完成");
     });
 }
 
-function buildModuleFile(name, moduleFile, target) {
+function buildModuleFile(name, leftbar, moduleFile, target) {
     let templateFile = './build/template/module.js';
     let templeteContent = fs.readFileSync(templateFile).toString();
     let moduleFileContent = fs.readFileSync(moduleFile).toString();
     let templateRenderer = _.template(templeteContent);
     let res = templateRenderer({
         name: name,
-        init: moduleFileContent
+        init: moduleFileContent,
+        leftbar: leftbar
     });
     fs.writeFile(target, res, (err, data) => {
         if (err) {
             console.error(err);
             return;
         }
-        console.log(target, "生成完成");
     });
 }

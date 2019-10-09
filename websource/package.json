@@ -1,5 +1,7 @@
 {
     "modules": [{
+        "name": "welcome"
+    }, {
         "name": "position",
         "active": true
     }, {

@@ -1,5 +1,6 @@
 {
-    "cssList": ["/static/lib/font-awesome/css/font-awesome.css",
+    "cssList": [
+        "/static/lib/font-awesome/css/font-awesome.css",
         "/static/lib/bootstrap/css/bootstrap.css",
         "/static/lib/bootstrap-plus/css/bootstrap.nav.css",
         "css/tntxiaui/style.css",
@@ -19,5 +20,21 @@
         "/static/lib/easy-tree/css/easy-tree.css",
         "/oa_admin_static/css/style.css"
     ],
-    "jsList": ["/static/lib/module_route/module_route.js", "/static/lib/main-layout-install/js/main-layout-install.js"]
+    "jsList": ["/static/lib/module_route/module_route.js", "/static/lib/main-layout-install/js/main-layout-install.js"],
+    "layout": {
+        "header": {
+            "height": 50,
+            "template": "/oa_admin_static/template/header.html"
+        },
+        "leftbar": {
+            "url": "/oa_admin_static/json/menu.json",
+            "width": 150
+        },
+        "main": {
+            "template": "/oa_admin_static/template/content.html"
+        }
+    },
+    "router": {
+        "defaultModule": "welcome"
+    }
 }
