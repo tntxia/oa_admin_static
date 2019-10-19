@@ -1,14 +1,4 @@
-(function(name, module) {
-    if (!window.modules) {
-        window.modules = Object.create(null);
-    };
-    window.modules[name] = module();
-})('company/add', function() {
-    var module = Object.create(null);
-    var exports = Object.create(null);
-    module.exports = exports;
-    exports.init = function() {
-        new Vue({
+new Vue({
     el: '#app',
     data: {
         form: {
@@ -46,7 +36,4 @@
             router.goRoute("company");
         }
     }
-});
-    };
-    return module.exports;
 });

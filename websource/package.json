@@ -1,5 +1,11 @@
 {
     "modules": [{
+        "name": "company/list"
+    }, {
+        "name": "company/add"
+    }, {
+        "name": "company/edit"
+    }, {
         "name": "welcome"
     }, {
         "name": "position",

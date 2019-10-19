@@ -2,7 +2,7 @@
     "text": "基础信息管理",
     "buttons": [{
         "text": "公司管理",
-        "url": "#company"
+        "url": "#company/list"
     }, {
         "text": "菜单管理",
         "url": "#menu"

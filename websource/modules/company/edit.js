@@ -1,14 +1,4 @@
-(function(name, module) {
-    if (!window.modules) {
-        window.modules = Object.create(null);
-    };
-    window.modules[name] = module();
-})('company/edit', function() {
-    var module = Object.create(null);
-    var exports = Object.create(null);
-    module.exports = exports;
-    exports.init = function() {
-        let id = router.getParams().id;
+let id = router.getParams().id;
 
 new Vue({
     el: '#app',
@@ -64,7 +54,4 @@ new Vue({
             router.goRoute("company/list");
         }
     }
-});
-    };
-    return module.exports;
 });
