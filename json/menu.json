@@ -5,7 +5,7 @@
         "url": "#company/list"
     }, {
         "text": "菜单管理",
-        "url": "#menu"
+        "url": "#menu/list"
     }, {
         "text": "左边菜单管理",
         "url": "#leftbar"

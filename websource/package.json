@@ -1,21 +1,13 @@
 {
     "modules": [{
-        "name": "company/list"
-    }, {
-        "name": "company/add"
-    }, {
-        "name": "company/edit"
-    }, {
-        "name": "welcome"
-    }, {
-        "name": "position",
-        "active": true
-    }, {
-        "name": "position_add",
-        "active": true
-    }, {
-        "name": "position_edit",
-        "active": true
+        "group": "menu",
+        "name": "list"
     }],
-    "components": []
+    "components": [{
+        "group": "menu",
+        "name": "edit-view"
+    }, {
+        "group": "menu",
+        "name": "add-view"
+    }]
 }

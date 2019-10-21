@@ -5,16 +5,16 @@ new Vue({
             deptId: ''
         },
         dataset: {
-            url: 'company!list.do',
+            url: 'menu!list.do',
             method: 'post'
         }
     },
     methods: {
         toAdd() {
-            router.goRoute("company/add");
+            router.goRoute("menu/add");
         },
         toEdit(row) {
-            router.goRoute("company/edit", {
+            router.goRoute("menu/edit", {
                 id: row.id
             });
         },
@@ -22,7 +22,7 @@ new Vue({
             if (confirm("删除后无法恢复，是否确认删除")) {
                 let me = this;
                 $.ajax({
-                    url: 'company!del.do',
+                    url: 'menu!del.do',
                     data: {
                         id: row.id
                     }

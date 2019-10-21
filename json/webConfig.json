@@ -15,6 +15,7 @@
         "/static/lib/jxiaui/0.1/css/jxiaui-table-form.css",
         "/static/lib/jxiaui/0.1/css/jxiaui-upload-image.css",
         "/static/lib/main-layout-install/css/main-layout.css",
+        "/static/lib/jxiaui/0.1/css/jxiaui-tree.css",
         "css/tntxiaui/style.css",
         "css/style.css",
         "/static/lib/ztree/css/zTreeStyle/zTreeStyle.css",
@@ -22,6 +23,13 @@
         "/oa_admin_static/css/style.css"
     ],
     "jsList": ["/static/lib/module_route/module_route.js", "/static/lib/main-layout-install/js/main-layout-install.js"],
+    "components": [{
+        "name": "menu-edit-view",
+        "url": "/oa_admin_static/components/menu/menu-edit-view.js"
+    }, {
+        "name": "menu-add-view",
+        "url": "/oa_admin_static/components/menu/menu-add-view.js"
+    }],
     "layout": {
         "header": {
             "height": 50,

@@ -73,7 +73,7 @@ function buildCompFile(c) {
         return;
     }
 
-    console.log("开始编译组件", group, name);
+    console.log("开始编译组件", comp.group, comp.name);
 
     setCache(optionsjsFile);
     setCache(templateFile);
