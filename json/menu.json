@@ -7,12 +7,6 @@
         "text": "菜单管理",
         "url": "#menu/list"
     }, {
-        "text": "左边菜单管理",
-        "url": "#leftbar"
-    }, {
-        "text": "权限组菜单管理",
-        "url": "restrain_menu.html"
-    }, {
         "text": "组织架构管理",
         "url": "#organization"
     }, {
