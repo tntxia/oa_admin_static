@@ -50,6 +50,8 @@ module.exports = {
     },
     watch: {
         id() {
+            debugger
+            this.loadData();
             this.form = {};
         }
     }

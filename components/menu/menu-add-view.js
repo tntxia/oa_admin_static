@@ -60,6 +60,8 @@
     },
     watch: {
         id() {
+            debugger
+            this.loadData();
             this.form = {};
         }
     }

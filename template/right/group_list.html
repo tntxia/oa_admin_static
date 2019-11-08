@@ -1,0 +1,20 @@
+<div id="app">
+    <button @click="toAdd">增加</button>
+    <div>
+        <jxiaui-datagrid ref="datagrid" :dataset="dataset">
+            <jxiaui-datagrid-item label="#" type="index"></jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="名称" field="name">
+                <template v-slot="row">
+                    <a href="javascript:void(0)" @click="toEdit(row)">{{row.name}}</a>
+                </template>
+            </jxiaui-datagrid-item>
+            <jxiaui-datagrid-item label="操作" field="pic_id">
+                <template v-slot="row">
+                    <button @click="toEdit(row)">编辑</button>
+                    <button @click="del(row)">删除</button>
+
+                </template>
+            </jxiaui-datagrid-item>
+        </jxiaui-datagrid>
+    </div>
+</div>

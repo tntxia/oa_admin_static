@@ -31,6 +31,35 @@
         "url": "/oa_admin_static/components/menu/menu-add-view.js"
     }],
     "layout": {
+        "router": {
+            "defaultModule": "welcome",
+            "tree": [{
+                "name": "welcome",
+                "label": "欢迎"
+            }, {
+                "name": "user",
+                "label": "用户管理",
+                "index": "list",
+                "children": [{
+                    "name": "add",
+                    "label": "增加"
+                }, {
+                    "name": "edit",
+                    "label": "编辑"
+                }, {
+                    "name": "role",
+                    "label": "角色管理"
+                }]
+            }, {
+                "name": "company",
+                "label": "公司管理",
+                "index": "list",
+                "children": [{
+                    "name": "add",
+                    "label": "增加"
+                }]
+            }]
+        },
         "header": {
             "height": 50,
             "template": "/oa_admin_static/template/header.html"
@@ -40,10 +69,8 @@
             "width": 150
         },
         "main": {
+            "crumb": true,
             "template": "/oa_admin_static/template/content.html"
         }
-    },
-    "router": {
-        "defaultModule": "welcome"
     }
 }

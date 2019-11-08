@@ -43,11 +43,8 @@
                         }
                     });
                 },
-
                 toAdd: function() {
-
                     router.goRoute("restrain_add");
-
                 },
                 viewRight: function(id) {
                     router.goRoute("restrain_right", {

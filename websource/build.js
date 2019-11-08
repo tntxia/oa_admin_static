@@ -12,7 +12,7 @@ fs.readFile("package.json", "utf8", (err, content) => {
     modules.forEach(m => {
         let name = m.name;
         let group = m.group;
-        let leftbar = !!m.leftbar;
+        let leftbar = m.leftbar;
 
         let moduleName = (group ? group + "/" : '') + name;
         let file = "modules/" + moduleName + ".js";

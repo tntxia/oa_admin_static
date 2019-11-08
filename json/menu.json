@@ -2,7 +2,7 @@
     "text": "基础信息管理",
     "buttons": [{
         "text": "公司管理",
-        "url": "#company/list"
+        "url": "#company"
     }, {
         "text": "菜单管理",
         "url": "#menu/list"
@@ -17,25 +17,25 @@
         "url": "#user"
     }, {
         "text": "汇率管理",
-        "url": "#currency"
+        "url": "#currency/list"
     }, {
         "text": "品牌管理",
-        "url": "base/trademark.ftl"
+        "url": "#trademark/list"
     }, {
         "text": "付款方式管理",
-        "url": "#payway"
+        "url": "#payway/list"
     }]
 }, {
     "text": "权限管理",
     "buttons": [{
         "text": "权限管理",
-        "url": "#right"
+        "url": "#right/list"
     }, {
         "text": "权限组管理",
-        "url": "#right_group"
+        "url": "#right/group_list"
     }, {
         "text": "角色管理",
-        "url": "#restrain"
+        "url": "#right/role_list"
     }]
 }, {
     "text": "合同模板管理",
