@@ -22,7 +22,7 @@
         "/static/lib/easy-tree/css/easy-tree.css",
         "/oa_admin_static/css/style.css"
     ],
-    "jsList": ["/static/lib/module_route/module_route.js", "/static/lib/main-layout-install/js/main-layout-install.js"],
+    "jsList": ["/static/lib/ztree/js/jquery.ztree.all.js", "/static/lib/easy-tree/js/easy-ztree.js", "/static/lib/module_route/module_route.js", "/static/lib/main-layout-install/js/main-layout-install.js"],
     "components": [{
         "name": "menu-edit-view",
         "url": "/oa_admin_static/components/menu/menu-edit-view.js"
