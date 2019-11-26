@@ -1,14 +1,35 @@
-(function(name, module) {
+(function(name, moduleFun) {
     if (!window.modules) {
         window.modules = Object.create(null);
     };
-    window.modules[name] = module();
+    let module = moduleFun();
+    if (arguments.length > 2) {
+        let components = Object.create(null);
+        for (let i = 2; i < arguments.length; i++) {
+            let name = arguments[i];
+            i++;
+            let func = arguments[i];
+            if (!func) {
+                continue;
+            }
+            let component = func();
+            components[name] = component;
+        }
+        module.components = components;
+    }
+
+    window.modules[name] = module;
 })('user/list', function() {
-    var module = Object.create(null);
-    var exports = Object.create(null);
-    module.exports = exports;
-    exports.init = function() {
-        let grid;
+        var module = Object.create(null);
+        var exports = Object.create(null);
+        module.exports = exports;
+
+        
+        module.exports.template = null;
+        
+
+        exports.init = function() {
+            let grid;
 
 let componentUpdatePasswordDialog = {
     template: '<jxiaui-dialog title="密码修改" ref="dialog"><div id="form" style="padding: 10px;"><div>密码：<input v-model="password" type="password"></div><div>重复密码：<input v-model="password2" type="password"></div><button @click="update">提交</button></div></jxiaui-dialog>',
@@ -223,6 +244,9 @@ function unlock(id) {
         }
     });
 }
-    };
-    return module.exports;
-});
+        };
+        return module.exports;
+    }
+
+    
+);
